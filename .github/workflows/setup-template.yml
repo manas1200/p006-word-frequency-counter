@@ -35,33 +35,33 @@ jobs:
           echo "Using namespace: $NAMESPACE"
           
           # Replace placeholders in all files BEFORE renaming
-          find ./{{NAMESPACE}} ./{{NAMESPACE}}.Tests -type f \( -name "*.cs" -o -name "*.csproj" -o -name "*.sh" -o -name "Dockerfile" -o -name "*.md" \) 2>/dev/null | while read -r file; do
-            sed -i "s/{{NAMESPACE}}/${NAMESPACE}/g" "$file"
+          find ./wordfrequency ./wordfrequency.Tests -type f \( -name "*.cs" -o -name "*.csproj" -o -name "*.sh" -o -name "Dockerfile" -o -name "*.md" \) 2>/dev/null | while read -r file; do
+            sed -i "s/wordfrequency/${NAMESPACE}/g" "$file"
           done
           
           # Replace in root files
-          sed -i "s/{{NAMESPACE}}/${NAMESPACE}/g" run.sh README.md setup.sh 2>/dev/null || true
+          sed -i "s/wordfrequency/${NAMESPACE}/g" run.sh README.md setup.sh 2>/dev/null || true
           
           # Rename .csproj files first
-          if [ -f "{{NAMESPACE}}/{{NAMESPACE}}.csproj" ]; then
-            mv "{{NAMESPACE}}/{{NAMESPACE}}.csproj" "{{NAMESPACE}}/${NAMESPACE}.csproj"
+          if [ -f "wordfrequency/wordfrequency.csproj" ]; then
+            mv "wordfrequency/wordfrequency.csproj" "wordfrequency/${NAMESPACE}.csproj"
           fi
           
-          if [ -f "{{NAMESPACE}}.Tests/{{NAMESPACE}}.Tests.csproj" ]; then
-            mv "{{NAMESPACE}}.Tests/{{NAMESPACE}}.Tests.csproj" "{{NAMESPACE}}.Tests/${NAMESPACE}.Tests.csproj"
+          if [ -f "wordfrequency.Tests/wordfrequency.Tests.csproj" ]; then
+            mv "wordfrequency.Tests/wordfrequency.Tests.csproj" "wordfrequency.Tests/${NAMESPACE}.Tests.csproj"
           fi
           
           # Rename folders
-          if [ -d "{{NAMESPACE}}" ]; then
-            mv "{{NAMESPACE}}" "${NAMESPACE}"
+          if [ -d "wordfrequency" ]; then
+            mv "wordfrequency" "${NAMESPACE}"
           fi
           
-          if [ -d "{{NAMESPACE}}.Tests" ]; then
-            mv "{{NAMESPACE}}.Tests" "${NAMESPACE}.Tests"
+          if [ -d "wordfrequency.Tests" ]; then
+            mv "wordfrequency.Tests" "${NAMESPACE}.Tests"
           fi
           
           # Update run.sh path (should already be done, but ensure it)
-          sed -i "s/cd {{NAMESPACE}}/cd ${NAMESPACE}/g" run.sh 2>/dev/null || true
+          sed -i "s/cd wordfrequency/cd ${NAMESPACE}/g" run.sh 2>/dev/null || true
 
       - name: Commit changes
         run: |

@@ -2,10 +2,10 @@ using CLOOPS.NATS.Attributes;
 using CLOOPS.NATS.Meta;
 using Microsoft.Extensions.Logging;
 using NATS.Client.Core;
-using {{NAMESPACE}}.services;
-using {{NAMESPACE}}.services.http;
+using wordfrequency.services;
+using wordfrequency.services.http;
 
-namespace {{NAMESPACE}}.controllers;
+namespace wordfrequency.controllers;
 
 public class HealthController
 {
@@ -21,7 +21,7 @@ public class HealthController
         _defaultHttpService = defaultHttpService;
     }
 
-    [NatsConsumer(_subject: "health.{{NAMESPACE}}")]
+    [NatsConsumer(_subject: "health.wordfrequency")]
     public async Task<NatsAck> GetHealth(NatsMsg<string> msg, CancellationToken ct = default)
     {
         _logger.LogDebug("Health check requested");

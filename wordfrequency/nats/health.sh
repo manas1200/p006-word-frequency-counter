@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # usage: ./nats/health.sh
-nats request health.{{NAMESPACE}} hello | jq
+nats request health.wordfrequency hello | jq
 

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <PackageId>{{NAMESPACE}}</PackageId>
-    <RootNamespace>{{NAMESPACE}}</RootNamespace>
+    <PackageId>wordfrequency</PackageId>
+    <RootNamespace>wordfrequency</RootNamespace>
     <TargetFramework>net9.0</TargetFramework>
     <RuntimeIdentifiers>linux-x64</RuntimeIdentifiers>
     <Nullable>enable</Nullable>

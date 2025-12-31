@@ -4,7 +4,7 @@ This document provides detailed instructions for setting up this GitHub template
 
 ## What is a GitHub Template?
 
-A GitHub template repository allows you to create new repositories with the same structure and files. This template includes placeholders (`{{NAMESPACE}}`) that need to be replaced with your actual namespace.
+A GitHub template repository allows you to create new repositories with the same structure and files. This template includes placeholders (`wordfrequency`) that need to be replaced with your actual namespace.
 
 ## Setup Methods
 
@@ -25,7 +25,7 @@ A GitHub template repository allows you to create new repositories with the same
 3. Enter your namespace when prompted (e.g., `my.service` or `MyService`)
 
 4. The script will automatically:
-   - Replace all `{{NAMESPACE}}` placeholders
+   - Replace all `wordfrequency` placeholders
    - Rename folders
    - Update all configuration files
 
@@ -42,13 +42,13 @@ A GitHub template repository allows you to create new repositories with the same
 If you prefer manual control:
 
 1. **Find and Replace**: Use your IDE's find-and-replace feature:
-   - Find: `{{NAMESPACE}}`
+   - Find: `wordfrequency`
    - Replace: `Your.Namespace` (use your actual namespace)
 
 2. **Rename Folders**:
    ```bash
-   mv "{{NAMESPACE}}" "YourNamespace"
-   mv "{{NAMESPACE}}.Tests" "YourNamespace.Tests"
+   mv "wordfrequency" "YourNamespace"
+   mv "wordfrequency.Tests" "YourNamespace.Tests"
    ```
 
 3. **Update Project Files**:
@@ -91,11 +91,11 @@ dotnet test
 
 ### Setup script fails
 - Make sure you're running from the repository root
-- Check that `{{NAMESPACE}}` folders exist
+- Check that `wordfrequency` folders exist
 - Verify you have write permissions
 
 ### Build errors
-- Ensure all `{{NAMESPACE}}` placeholders are replaced
+- Ensure all `wordfrequency` placeholders are replaced
 - Check that folder names match your namespace
 - Verify `.csproj` files reference correct paths
 

@@ -14,6 +14,6 @@ fi
 
 # Run dotnet watch
 echo "Starting dotnet run --watch..."
-cd {{NAMESPACE}}
+cd wordfrequency
 dotnet run --watch
 

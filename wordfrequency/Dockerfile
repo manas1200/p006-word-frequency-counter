@@ -12,4 +12,4 @@ RUN dotnet publish -c release -o /app --no-restore --runtime linux-x64 --self-co
 FROM mcr.microsoft.com/dotnet/runtime:9.0
 WORKDIR /app
 COPY --from=build /app ./
-ENTRYPOINT ["./{{NAMESPACE}}"]
+ENTRYPOINT ["./wordfrequency"]

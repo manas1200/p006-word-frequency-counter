@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\{{NAMESPACE}}\{{NAMESPACE}}.csproj" />
+    <ProjectReference Include="..\wordfrequency\wordfrequency.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-namespace {{NAMESPACE}}.services;
+namespace wordfrequency.services;
 
 public class AppSettings : BaseAppSettings
 {
